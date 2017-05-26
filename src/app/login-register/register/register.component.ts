@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
           console.log(result);
           this.registerSubmitted = false;
           this.clearAllFields();
-          alert("user " + this.newUser.userName + " successfully created");
+          alert("user :: " + this.newUser.userName + " :: successfully created");
         }
 
       }

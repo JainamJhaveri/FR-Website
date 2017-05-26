@@ -1,3 +1,42 @@
-<p>
-  login works!
-</p>
+<div class="container" align="center">
+
+  <div *ngIf="registeredUserMessage" class="form-group alert alert-success inheritfonts">
+    {{registeredUserMessage}}
+  </div>
+
+  <div class="row" align="left">
+    <!-- LOGIN FORM begins-->
+    <form name="loginForm" (ngSubmit)="loginForm.form.valid && loginStudent()" #loginForm="ngForm"
+          (keydown)="clearErrorMessage()">
+
+      <!-- EMAIL INPUT form group begins-->
+      <div class="form-group">
+        <label for="inputEmail">username</label>
+        <input type="text" class="form-control" id="inputEmail" name="inputEmail"
+               [(ngModel)]="userLogin.userName" required #inputUsername="ngModel">
+      </div>
+      <!-- EMAIL INPUT form group ends-->
+
+      <!-- PASSWORD INPUT form group begins-->
+      <div class="form-group">
+        <label for="inputPassword">password</label>
+        <input type="password" class="form-control" id="inputPassword" name="inputPassword"
+               [(ngModel)]="userLogin.password" required #inputPassword="ngModel">
+      </div>
+      <!-- PASSWORD INPUT form group ends-->
+
+      <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div begins -->
+      <div class="form-group login-button-div">
+        <button [disabled]="!loginForm.form.valid" type="submit" class="btn login-button">Login</button>
+
+        <img *ngIf="loginSubmitted || forgotPasswordSubmitted" src="../../../assets/loading.gif"/>
+        <hr *ngIf="errorMessage || successMessage">
+        <div *ngIf="errorMessage" class="alert alert-danger inheritfonts">{{errorMessage}}</div>
+        <div *ngIf="successMessage" class="alert alert-success inheritfonts">{{successMessage}}</div>
+      </div>
+      <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div ends -->
+
+    </form> <!-- LOGIN FORM ends -->
+  </div>
+
+</div>
