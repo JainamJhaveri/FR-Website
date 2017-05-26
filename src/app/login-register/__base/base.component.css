@@ -1,0 +1,10 @@
+.common-login-register-div {
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.common-login-register-div:hover{
+  text-align: center;
+  color: deepskyblue;
+}

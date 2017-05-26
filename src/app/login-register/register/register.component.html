@@ -1,0 +1,72 @@
+<div class="container" align="center">
+
+  <div class="row" align="left">
+    <form name="registerForm" (ngSubmit)="registerForm.form.valid && registerUser()" #registerForm="ngForm"
+          (keydown)="clearErrorMessage()">
+
+      <!-- USERNAME INPUT form group begins-->
+      <div class="form-group ">
+        <label for="inputFirstName">First Name</label>
+        <input type="text" class="form-control" id="inputFirstName" name="inputFirstName"
+               [(ngModel)]="newUser.firstName" required #inputFirstName="ngModel"/>
+      </div>
+
+
+      <!-- USERNAME INPUT form group begins-->
+      <div class="form-group ">
+        <label for="inputUserName">select your username</label>
+        <input type="text" class="form-control" id="inputUserName" name="inputUserName"
+               [(ngModel)]="newUser.userName" required #inputUserName="ngModel"/>
+      </div>
+
+
+      <!-- MOBILE NUMBER form group begins-->
+      <div class="form-group ">
+        <label for="inputMobileNumber">mobile number</label>
+        <input type="tel" class="form-control" id="inputMobileNumber" name="inputMobileNumber"
+               [(ngModel)]="newUser.mobileNumber" required #inputMobileNumber="ngModel"/>
+      </div>
+      <!-- MOBILE NUMBER form group ends-->
+
+      <!-- EMAIL INPUT form group begins-->
+      <div class="form-group ">
+        <label for="inputEmail">email id</label>
+        <input type="email" class="form-control" id="inputEmail" name="inputEmail"
+               [(ngModel)]="newUser.emailAddress" required #inputEmail="ngModel"/>
+      </div>
+      <!-- EMAIL INPUT form group ends-->
+
+
+      <!-- PASSWORD (1) form group begins-->
+      <div class="form-group ">
+        <label for="inputPassword1">create a password </label>
+        <input type="password" class="form-control" id="inputPassword1" name="inputPassword1"
+               [(ngModel)]="newUser.password" required #inputPassword1="ngModel"/>
+      </div>
+      <!-- PASSWORD (1) form group ends-->
+
+
+      <!-- PASSWORD (2) form group begins-->
+      <div class="form-group ">
+        <label for="inputPassword2">confirm your password</label>
+        <input type="password" class="form-control" id="inputPassword2" name="inputPassword2"
+               [(ngModel)]="inputPassword2" required #myInputPassword2="ngModel"/>
+      </div>
+      <!-- PASSWORD (2) form group ends-->
+
+
+      <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div begins -->
+      <div class="form-group  register-button-div">
+        <button [disabled]="!registerForm.form.valid" type="submit" class="btn register-button" id="digits-button">
+          Register
+        </button>
+
+        <img *ngIf="registerSubmitted" src="../../../assets/loading.gif"/>
+        <hr *ngIf="errorMessage">
+        <div *ngIf="errorMessage" class="alert alert-danger inheritfonts">{{errorMessage}}</div>
+      </div>
+      <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div ends -->
+
+    </form><!-- REGISTRATION FORM ends-->
+  </div>
+</div>

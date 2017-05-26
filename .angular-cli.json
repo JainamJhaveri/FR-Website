@@ -21,7 +21,13 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "javascripts/jquery-1.12.0.min.js",
+        "javascripts/jquery-ui.min.js",
+        "javascripts/jquery.websocket.min.js",
+        "javascripts/jquery.json.min.js",
+        "javascripts/js_utils.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
