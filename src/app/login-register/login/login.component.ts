@@ -3,6 +3,7 @@ import {UserLogin} from "../_models/user-auth";
 import {Validations} from "../_models/validations";
 import {AuthService} from "../_services/auth.service";
 import {Router} from "@angular/router";
+import {SharedService} from "../_services/shared.service";
 
 @Component({
   selector: 'login-register-login',
@@ -16,10 +17,18 @@ export class LoginComponent implements OnInit {
   errorMessage = '';                            // var to display error message if the login fails
   successMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private sharedService: SharedService) {
   }
 
   ngOnInit() {
+    this.getLoginDetailsFromRegisterForm();
+  }
+
+  private getLoginDetailsFromRegisterForm() {
+    this.sharedService.loginDetails$.subscribe(userLogin => {
+      console.log(userLogin);
+      this.userLogin = userLogin;
+    });
   }
 
   loginStudent() {
@@ -60,6 +69,5 @@ export class LoginComponent implements OnInit {
     this.loginSubmitted = false;
     this.errorMessage = message;
   }
-
 
 }

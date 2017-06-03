@@ -1,7 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {UserRegister} from "../_models/user-auth";
+import {UserLogin, UserRegister} from "../_models/user-auth";
 import {Validations} from "../_models/validations";
 import {AuthService} from "../_services/auth.service";
+import {SharedService} from "../_services/shared.service";
 
 @Component({
   selector: 'login-register-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
   inputPassword2: string;       // for re-enter password field one-way data binding
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private sharedService: SharedService) {
   }
 
   ngOnInit() {
@@ -48,15 +49,15 @@ export class RegisterComponent implements OnInit {
 
     this.authService.registerUser(this.newUser).subscribe(
       result => {
+        console.log(result);
+
         if (result["success"] === "false") {
-          console.log(result);
           this.displayErrorMessage(result["message"]);
         }
         else {
-          console.log(result);
+          this.sharedService.announceSetLoginDetails(new UserLogin(this.newUser.userName, this.newUser.password));
           this.registerSubmitted = false;
           this.clearAllFields();
-          alert("user :: " + this.newUser.userName + " :: successfully created");
         }
 
       }

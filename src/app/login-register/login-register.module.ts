@@ -9,6 +9,7 @@ import {RegisterComponent} from "./register/register.component";
 import {AuthService} from "./_services/auth.service";
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
+import {SharedService} from "./_services/shared.service";
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import {SharedModule} from "../shared/shared.module";
     LoginRegisterRoutingModule
   ],
   declarations: [BaseComponent, LoginComponent, RegisterComponent],
-  providers: [AuthService]
+  providers: [AuthService, SharedService]
 })
 export class LoginRegisterModule {
 }
