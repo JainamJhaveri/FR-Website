@@ -10,7 +10,7 @@ export class UserRegister {
               public password: string,
               public emailAddress: string,
               public mobileNumber: string,
-              public firstName: string,) {
+              public firstName: string) {
   }
 
 }

@@ -8,11 +8,13 @@ import {RegisterComponent} from "./register/register.component";
 // services
 import {AuthService} from "./_services/auth.service";
 import {FormsModule} from "@angular/forms";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     LoginRegisterRoutingModule
   ],
   declarations: [BaseComponent, LoginComponent, RegisterComponent],

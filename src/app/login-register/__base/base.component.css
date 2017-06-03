@@ -1,10 +1,12 @@
 .common-login-register-div {
   font-size: 24px;
   text-align: center;
-  cursor: pointer;
+  text-transform: uppercase;
 }
 
-.common-login-register-div:hover{
-  text-align: center;
-  color: deepskyblue;
+.line {
+  height: 5px;
+  padding: 0;
+  background-color: #0a1d36;
+  margin: 8px;
 }

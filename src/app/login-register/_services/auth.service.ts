@@ -48,10 +48,10 @@ export class AuthService {
    * This method calls POST request /api/login
    *
    * @returns {Observable<GeneralResponse>}
-   * @param studentLoginObject
+   * @param userLogin
    */
-  loginUser(studentLoginObject: UserLogin): Observable<GeneralResponse> {
-    let bodyString = JSON.stringify(studentLoginObject); // Stringify payload
+  loginUser(userLogin: UserLogin): Observable<GeneralResponse> {
+    let bodyString = JSON.stringify(userLogin); // Stringify payload
     let headers = new Headers({'Content-Type': 'application/json'}); // ... Set content type to JSON
     let options = new RequestOptions({headers: headers}); // Create a request option
 

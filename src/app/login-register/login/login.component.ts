@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'login-register-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css', '../common.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -41,8 +41,7 @@ export class LoginComponent implements OnInit {
         }
         else {
           console.log(result);
-          let studentId = result["response"]["_id"];
-          this.router.navigate(['student', studentId]);
+          this.router.navigate(['home']);
         }
       }
     );

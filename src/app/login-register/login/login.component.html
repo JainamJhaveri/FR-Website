@@ -22,8 +22,8 @@
       <!-- PASSWORD INPUT form group ends-->
 
       <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div begins -->
-      <div class="form-group login-button-div">
-        <button [disabled]="!loginForm.form.valid" type="submit" class="btn login-button">Login</button>
+      <div class="form-group text-center">
+        <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-info">Login</button>
 
         <img *ngIf="loginSubmitted" src="../../../assets/loading.gif"/>
         <hr *ngIf="errorMessage || successMessage">

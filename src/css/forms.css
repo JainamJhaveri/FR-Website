@@ -1,23 +1,21 @@
-.ng-valid[required]{
+.ng-valid[required] {
   border-left: 5px solid #42A948; /* green */
 }
 
 /**
 ng-invalid becomes true when form children are empty
  */
-.ng-invalid:not(form)  {
+.ng-invalid:not(form) {
   border-left: 5px solid #a94442; /* red */
 }
 
-
-.form-group{
+.form-group {
   text-transform: uppercase;
-  font-family: comfo-light, serif;
+  /*font-family: comfo-light, serif;*/
   letter-spacing: 2px;
   font-size: medium;
 }
 
-
-.inheritfonts{
+.inheritfonts {
   text-transform: none !important;
 }
