@@ -1,9 +1,5 @@
 <div class="container" align="center">
 
-  <div *ngIf="registeredUserMessage" class="form-group alert alert-success inheritfonts">
-    {{registeredUserMessage}}
-  </div>
-
   <div class="row" align="left">
     <!-- LOGIN FORM begins-->
     <form name="loginForm" (ngSubmit)="loginForm.form.valid && loginStudent()" #loginForm="ngForm"
@@ -29,7 +25,7 @@
       <div class="form-group login-button-div">
         <button [disabled]="!loginForm.form.valid" type="submit" class="btn login-button">Login</button>
 
-        <img *ngIf="loginSubmitted || forgotPasswordSubmitted" src="../../../assets/loading.gif"/>
+        <img *ngIf="loginSubmitted" src="../../../assets/loading.gif"/>
         <hr *ngIf="errorMessage || successMessage">
         <div *ngIf="errorMessage" class="alert alert-danger inheritfonts">{{errorMessage}}</div>
         <div *ngIf="successMessage" class="alert alert-success inheritfonts">{{successMessage}}</div>

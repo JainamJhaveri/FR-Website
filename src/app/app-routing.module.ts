@@ -14,8 +14,8 @@ export function loadLoginRegisterModule() { return LoginRegisterModule; }
 const routes: Routes = [
   {
     path: '',
-    loadChildren: loadLoginRegisterModule
-    // loadChildren: 'app/login-register/login-register.module#LoginRegisterModule'
+    // loadChildren: loadLoginRegisterModule
+    loadChildren: 'app/login-register/login-register.module#LoginRegisterModule'
   }
 ];
 
