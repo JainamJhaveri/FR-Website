@@ -21,13 +21,13 @@ export function loadHomeModule() {
 const routes: Routes = [
   {
     path: '',
-    // loadChildren: loadLoginRegisterModule
-    loadChildren: 'app/login-register/login-register.module#LoginRegisterModule'
+    loadChildren: loadLoginRegisterModule
+    // loadChildren: 'app/login-register/login-register.module#LoginRegisterModule'
   },
   {
     path: 'home',
-    // loadChildren: loadHomeModule
-    loadChildren: 'app/home/home.module#HomeModule'
+    loadChildren: loadHomeModule
+    // loadChildren: 'app/home/home.module#HomeModule'
   },
   {
     path: '**',

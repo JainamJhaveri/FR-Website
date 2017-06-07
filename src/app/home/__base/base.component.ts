@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent implements OnInit {
 
+  Tabs = Tabs;
+  selectedTab: Tabs;
+
   constructor() { }
 
   ngOnInit() {
+    this.selectedTab = Tabs.All;
   }
 
+  selectTab(uploadTab: Tabs): void {
+    this.selectedTab = uploadTab;
+  }
+
+}
+
+
+enum Tabs{
+  All = 1,
+  UploadPics
 }

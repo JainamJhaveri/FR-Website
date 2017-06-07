@@ -5,3 +5,16 @@ footer {
   height: 3em;
   margin-bottom: 0;
 }
+
+.active {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+li {
+  color: #337ab7;
+  padding: 13px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}

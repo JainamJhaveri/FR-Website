@@ -1,5 +1,29 @@
-<p class="text-center">
-  This page is under construction.. Come back later.
-</p>
+<!--<p class="text-center">-->
+  <!--This page is under construction.. Come back later.-->
+<!--</p>-->
 
 <!--<footer-component></footer-component>-->
+<br><br>
+<div class="container">
+
+  <ul class="nav nav-pills nav-justified">
+
+    <li [class.active]="selectedTab===Tabs.All" (click)="selectTab(Tabs.All)">
+      View All
+    </li>
+    <li [class.active]="selectedTab===Tabs.UploadPics" (click)="selectTab(Tabs.UploadPics)">
+      Upload Pictures
+    </li>
+
+  </ul>
+
+</div>
+
+<br>
+
+<div class="container">
+
+  <home-all *ngIf="selectedTab===Tabs.All"></home-all>
+  <home-upload-pics *ngIf="selectedTab===Tabs.UploadPics"></home-upload-pics>
+
+</div>
