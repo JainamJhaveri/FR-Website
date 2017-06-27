@@ -8,8 +8,21 @@ export class GeneralResponse {
    * @param response
    * @param success
    */
-  constructor(
-    public response : any,
-    public success : string
-  ){}
+  constructor(public response: any,
+              public success: string) {
+  }
+}
+
+export class ErrorResponse {
+  /**
+   * model for error response of any type that is received after API calls
+   * @param generalErrorMessage
+   */
+  constructor(public generalErrorMessage: any) {
+  }
+
+}
+
+export function loadAnErrorOccuredDialog(): void {
+  alert("an error occured");
 }

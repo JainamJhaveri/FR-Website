@@ -5,21 +5,21 @@
     <form name="loginForm" (ngSubmit)="loginForm.form.valid && loginStudent()" #loginForm="ngForm"
           (keydown)="clearErrorMessage()">
 
-      <!-- EMAIL INPUT form group begins-->
+      <!-- Username INPUT form group begins-->
       <div class="form-group">
-        <label for="inputEmail">username</label>
-        <input type="text" class="form-control" id="inputEmail" name="inputEmail"
+        <label for="inputUsername">username</label>
+        <input type="text" class="form-control" id="inputUsername" name="inputUsername"
                [(ngModel)]="userLogin.userName" required #inputUsername="ngModel">
       </div>
-      <!-- EMAIL INPUT form group ends-->
+      <!-- Username INPUT form group ends-->
 
-      <!-- PASSWORD INPUT form group begins-->
+      <!-- Password INPUT form group begins-->
       <div class="form-group">
         <label for="inputPassword">password</label>
         <input type="password" class="form-control" id="inputPassword" name="inputPassword"
                [(ngModel)]="userLogin.password" required #inputPassword="ngModel">
       </div>
-      <!-- PASSWORD INPUT form group ends-->
+      <!-- Password INPUT form group ends-->
 
       <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div begins -->
       <div class="form-group text-center">

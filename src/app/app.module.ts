@@ -7,6 +7,7 @@ import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared/shared.module";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {SharedModule} from "./shared/shared.module";
     NotFoundComponent
   ],
   imports: [
+    NoopAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,

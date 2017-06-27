@@ -13,7 +13,7 @@ export class BaseComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.selectedTab = Tabs.All;
+    this.selectedTab = Tabs.UploadPics;
   }
 
   selectTab(uploadTab: Tabs): void {
