@@ -31,7 +31,8 @@ export class UploadPicsComponent implements OnInit {
       this.events = res.response;
       this.selectedEvent = this.events[0];
       console.log(this.events);
-    })
+    });
+
   }
 
 }

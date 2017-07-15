@@ -1,9 +1,6 @@
-<form>
-  <md-select placeholder="Select Event" [(ngModel)]="selectedEvent" name="event">
-    <md-option *ngFor="let event of events" [value]="event">
-      {{event.eventName}}
-    </md-option>
-  </md-select>
+<md-select placeholder="Select Event" [(ngModel)]="selectedEvent" name="event">
+  <md-option *ngFor="let event of events" [value]="event">
+    {{event.eventName}}
+  </md-option>
+</md-select>
 
-  <!--<p> Selected value: {{selectedEvent}} </p>-->
-</form>
