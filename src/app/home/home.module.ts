@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 // material module
-import {MyMaterialModule} from "../my-material/my-material.module";
+import {MyMaterialModule} from "../_utils/my-material/my-material.module";
 // routing module
 import {HomeRoutingModule} from "./home-routing.module";
 // base component

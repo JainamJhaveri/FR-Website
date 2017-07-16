@@ -6,7 +6,7 @@ import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 // feature modules
 import {LoginRegisterModule} from "./login-register/login-register.module";
-import {NotFoundComponent} from "./not-found/not-found.component";
+import {NotFoundComponent} from "./_utils/not-found/not-found.component";
 import {HomeModule} from "./home/home.module";
 
 export function loadLoginRegisterModule() {

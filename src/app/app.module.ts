@@ -1,4 +1,4 @@
-import {NotFoundComponent} from "./not-found/not-found.component";
+import {NotFoundComponent} from "./_utils/not-found/not-found.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
@@ -7,7 +7,7 @@ import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared/shared.module";
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
     NotFoundComponent
   ],
   imports: [
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,

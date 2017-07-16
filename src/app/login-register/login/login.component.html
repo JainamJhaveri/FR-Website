@@ -1,9 +1,19 @@
-<div class="container" align="center">
 
+
+<div class="container" align="center">
+  <!--<div class="row" align="center">-->
+    <!--Login-->
+  <!--</div>-->
+  <md-toolbar>Login</md-toolbar>
   <div class="row" align="left">
     <!-- LOGIN FORM begins-->
-    <form name="loginForm" (ngSubmit)="loginForm.form.valid && loginStudent()" #loginForm="ngForm"
+
+    <form name="loginForm" (submit)="loginForm.form.valid && loginStudent()" #loginForm="ngForm"
           (keydown)="clearErrorMessage()">
+
+      <md-input-container class="example-full-width">
+        <input mdInput placeholder="Company (disabled)" disabled value="Google">
+      </md-input-container>
 
       <!-- Username INPUT form group begins-->
       <div class="form-group">
