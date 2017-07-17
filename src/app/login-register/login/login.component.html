@@ -1,48 +1,50 @@
-
-
 <div class="container" align="center">
-  <!--<div class="row" align="center">-->
-    <!--Login-->
-  <!--</div>-->
+
   <md-toolbar>Login</md-toolbar>
-  <div class="row" align="left">
-    <!-- LOGIN FORM begins-->
+  <br>
 
-    <form name="loginForm" (submit)="loginForm.form.valid && loginStudent()" #loginForm="ngForm"
-          (keydown)="clearErrorMessage()">
+  <!-- LOGIN FORM begins-->
+  <form name="loginForm" (submit)="loginStudent()" [formGroup]="loginForm" novalidate
+        (keydown)="clearErrorMessage()">
 
-      <md-input-container class="example-full-width">
-        <input mdInput placeholder="Company (disabled)" disabled value="Google">
-      </md-input-container>
+    <!-- Username INPUT form group begins-->
+    <md-input-container class="full-width">
+      <input type="text" mdInput placeholder="Username" formControlName="userName" name="inputUsername"
+             required>
+    </md-input-container>
+    <!-- Username INPUT form group ends-->
 
-      <!-- Username INPUT form group begins-->
-      <div class="form-group">
-        <label for="inputUsername">username</label>
-        <input type="text" class="form-control" id="inputUsername" name="inputUsername"
-               [(ngModel)]="userLogin.userName" required #inputUsername="ngModel">
-      </div>
-      <!-- Username INPUT form group ends-->
+    <!-- Username error message div starts -->
+    <div *ngIf="formErrors?.userName" class="alert alert-danger">
+      {{ formErrors.userName}}
+    </div>
+    <!-- Username error message div ends -->
 
-      <!-- Password INPUT form group begins-->
-      <div class="form-group">
-        <label for="inputPassword">password</label>
-        <input type="password" class="form-control" id="inputPassword" name="inputPassword"
-               [(ngModel)]="userLogin.password" required #inputPassword="ngModel">
-      </div>
-      <!-- Password INPUT form group ends-->
+    <!-- Password INPUT form group begins-->
+    <md-input-container class="full-width">
+      <input type="password" mdInput placeholder="Password" formControlName="password" name="inputPassword"
+             required>
+    </md-input-container>
+    <!-- Password INPUT form group ends-->
 
-      <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div begins -->
-      <div class="form-group text-center">
-        <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-info">Login</button>
+    <!-- Username error message div starts -->
+    <div *ngIf="formErrors?.password" class="alert alert-danger">
+      {{ formErrors.password}}
+    </div>
+    <!-- Username error message div ends -->
 
-        <img *ngIf="loginSubmitted" src="../../../assets/loading.gif"/>
-        <hr *ngIf="errorMessage || successMessage">
-        <div *ngIf="errorMessage" class="alert alert-danger inheritfonts">{{errorMessage}}</div>
-        <div *ngIf="successMessage" class="alert alert-success inheritfonts">{{successMessage}}</div>
-      </div>
-      <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div ends -->
+    <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div begins -->
 
-    </form> <!-- LOGIN FORM ends -->
-  </div>
+    <div class="form-group text-center">
+      <button md-raised-button [disabled]="loginForm.status === 'INVALID'" type="submit">Login</button>
+      <img *ngIf="loginSubmitted" src="../../../assets/loading.gif"/>
+      <br><br>
+      <div *ngIf="errorMessage" class="alert alert-danger inheritfonts">{{errorMessage}}</div>
+      <div *ngIf="successMessage" class="alert alert-success inheritfonts">{{successMessage}}</div>
+    </div>
+    <!-- SUBMIT BUTTON, LOADING, ERROR MESSAGE div ends -->
+
+  </form>
+  <!-- LOGIN FORM ends -->
 
 </div>

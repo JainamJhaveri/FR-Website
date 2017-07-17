@@ -1,11 +1,18 @@
+import {AbstractControl, ValidatorFn} from "@angular/forms";
 export class Validations {
 
   public static MESSAGE_FULLNAME = "Full Name field must have length between 3 and 30";
   public static MESSAGE_EMAIL = "Please enter a valid email address";
-  public static MESSAGE_PASSWORD = "Your password must have length between 6 and 20 and should contain only alphabets, letters or underscore";
+  public static MESSAGE_PASSWORD = "Your password should contain only alphabets, letters or underscore";
   public static MESSAGE_MATCH_PASSWORD = "Passwords do not match !";
-  public static MESSAGE_USERNAME = "Your username must have length between 2 and 20 and should contain only alphabets, letters or underscore";
+  public static MESSAGE_USERNAME = "Your username should contain only alphabets, letters or underscore";
   public static MESSAGE_MOBILE_NUMBER = "Please enter a valid mobile number of 10 digits";
+
+  public static REGEX_USERNAME = /^[\w]{2,20}$/;
+  public static REGEX_PASSWORD = /^[\w]{6,20}$/;
+  public static REGEX_EMAIL = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  public static REGEX_MOBILE_NUMBER = /^[789]\d{9}$/;
+  public static REGEX_FULLNAME = /^[\w ]{3,30}$/;
 
   /**
    * validate email according to regex
@@ -83,5 +90,26 @@ export class Validations {
     return fullNameRegex.test(fullName);
   }
 
+
+}
+
+
+/**
+ *  validates whether passed regex is correct or not for a ControlGroup
+ *
+ *  if control group matches the value of regex
+ *      return null
+ *  return {'otherMessage': ..}}
+ *
+ * @param nameRe
+ * @returns {(control:AbstractControl)=>{[p: string]: any}}
+ */
+export function regexValidator(nameRe: RegExp): ValidatorFn {
+
+  return (control: AbstractControl): { [key: string]: any } => {
+    const name = control.value;
+    const no = nameRe.test(name);
+    return no ? null : {'otherMessage': {name}};
+  };
 
 }

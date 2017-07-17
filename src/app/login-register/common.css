@@ -9,14 +9,15 @@
 }
 
 button {
-  color: white;
   font-size: medium;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
-  border-radius: 10px;
   width: 150px;
   height: 40px;
+  /* from btn-info bootstrap*/
+  color: #fff;
+  background-color: #31b0d5;
 }
 
 .display_inline {

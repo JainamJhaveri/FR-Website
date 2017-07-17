@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 // material module
 import {MyMaterialModule} from "../_utils/my-material/my-material.module";
 // routing module
@@ -22,6 +22,7 @@ import {SharedService} from "./_services/shared.service";
     SharedModule,
     FormsModule,
     MyMaterialModule,
+    ReactiveFormsModule,
     LoginRegisterRoutingModule
   ],
   declarations: [BaseComponent, LoginComponent, RegisterComponent],
